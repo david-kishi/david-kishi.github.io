@@ -17,8 +17,8 @@
 
     /* Typography */
     --font-main: 'Source Code Pro', monospace;
-    --font-size-base: clamp(0.875rem, 2vw, 1.125rem);
-    --line-height: 1.8;
+    --font-size-base: clamp(0.75rem, 1.5vh, 1.125rem);
+    --line-height: 1.6;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -85,12 +85,51 @@ body {
 }
 
 /* ===================================
-   Theme Toggle Button
+   Header Buttons (Social + Theme Toggle)
    =================================== */
-.theme-toggle {
+.header-buttons {
     position: fixed;
     top: var(--spacing-md);
     right: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    z-index: 1000;
+}
+
+.social-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 4px;
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition-speed) var(--transition-smooth);
+    text-decoration: none;
+}
+
+.social-button:hover {
+    background-color: var(--border-color);
+}
+
+.social-button:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.social-icon-header {
+    width: 24px;
+    height: 24px;
+    transition: filter var(--transition-speed) var(--transition-smooth);
+}
+
+[data-theme="dark"] .social-icon-header {
+    filter: brightness(0) invert(1);
+}
+
+.theme-toggle {
     width: 3rem;
     height: 3rem;
     border-radius: 4px;
@@ -103,7 +142,6 @@ body {
     align-items: center;
     justify-content: center;
     transition: background-color var(--transition-speed) var(--transition-smooth);
-    z-index: 1000;
 }
 
 .theme-toggle:hover {
@@ -177,7 +215,7 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: var(--spacing-lg);
-    padding-top: calc(3rem + var(--spacing-lg) + var(--spacing-md));
+    padding-top: calc(3rem + var(--spacing-md) + var(--spacing-md));
     animation: fadeIn 0.8s var(--transition-smooth);
 }
 
@@ -197,7 +235,7 @@ body {
     background-color: var(--code-bg);
     border: 3px solid var(--border-color);
     border-radius: 0;
-    padding: var(--spacing-lg);
+    padding: clamp(1rem, 2vh, 2rem);
     max-width: 48rem;
     width: 100%;
     transition: border-color var(--transition-speed) var(--transition-smooth);
@@ -268,7 +306,7 @@ body {
 .social-icon {
     width: 24px;
     height: 24px;
-    vertical-align: middle;
+    vertical-align: text-bottom;
     transition: filter var(--transition-speed) var(--transition-smooth);
 }
 

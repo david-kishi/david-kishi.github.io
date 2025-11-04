@@ -12,29 +12,19 @@ const portfolioData = {
         },
         {
             key: '  languages',
-            value: '[\n    "C++",\n    "Python",\n    "JavaScript",\n    "Assembly"\n  ]'
+            value: '[\n    "C++",\n  ]'
         },
         {
             key: '  skills',
-            value: '[\n    "TensorFlow",\n    "Project Management",\n    "Microsoft Office",\n    "Git"\n  ]'
+            value: '[\n    "Project Management",\n    "Git",\n    "Atlassian Suite",\n    "Agile",\n    "Linux"\n  ]'
         },
         {
             key: '  passions',
-            value: '[\n    "Space Exploration 🚀",\n    "Esports 🎮",\n    "Machine Learning 🖥"\n  ]'
+            value: '[\n    "Space Exploration 🚀",\n    "Esports 🎮",\n  ]'
         },
         {
-            key: '  school',
-            value: '[\n    "B.S. Computer Science - CSUF",\n    "Data Analytics & Visualization Certificate - UCI"\n  ]'
-        },
-        {
-            key: '  GitHub',
-            value: '<a href="https://github.com/david-kishi/" target="_blank" rel="noopener noreferrer"><img src="imgs/GitHub-Mark-32px.png" alt="GitHub Logo" class="social-icon"></a>',
-            isHTML: true
-        },
-        {
-            key: '  LinkedIn',
-            value: '<a href="https://www.linkedin.com/in/david-kishi/" target="_blank" rel="noopener noreferrer"><img src="imgs/LinkedIn-Bug-32px.png" alt="LinkedIn Logo" class="social-icon"></a>',
-            isHTML: true
+            key: '  education',
+            value: '[\n    "B.S. Computer Science",\n    "Data Analytics & Visualization Certificate"\n  ]'
         }
     ],
     closing: '};\n'
