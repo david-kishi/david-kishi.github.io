@@ -173,10 +173,11 @@ body {
    =================================== */
 .container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     padding: var(--spacing-lg);
+    padding-top: calc(3rem + var(--spacing-lg) + var(--spacing-md));
     animation: fadeIn 0.8s var(--transition-smooth);
 }
 
@@ -321,6 +322,7 @@ body {
 
     .container {
         padding: var(--spacing-md);
+        padding-top: calc(2.5rem + var(--spacing-sm) + var(--spacing-md));
     }
 
     .code-block {
