@@ -85,6 +85,20 @@ body {
 }
 
 /* ===================================
+   Logo
+   =================================== */
+.logo {
+    position: fixed;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    font-family: var(--font-main);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    z-index: 1001;
+}
+
+/* ===================================
    Header Buttons (Social + Theme Toggle)
    =================================== */
 .header-buttons {
@@ -97,21 +111,32 @@ body {
     z-index: 1000;
 }
 
+/* Move header buttons below logo on small screens */
+/* Logo width ~120px + left margin 1.5rem (24px) + 10px buffer = ~154px
+   Header buttons width: 2 icons (24px each) + theme toggle (48px) + 2 gaps (16px each) = ~128px + right margin 24px = ~152px
+   Total needed: ~306px, use 320px for safety */
+@media (max-width: 320px) {
+    .header-buttons {
+        top: calc(var(--spacing-md) + 2.5rem);
+        right: var(--spacing-md);
+    }
+
+    .container {
+        padding-top: calc(5.5rem + var(--spacing-md));
+    }
+}
+
 .social-button {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 4px;
-    border: 2px solid var(--border-color);
-    background-color: var(--bg-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color var(--transition-speed) var(--transition-smooth);
     text-decoration: none;
+    transition: opacity var(--transition-speed) var(--transition-smooth);
+    opacity: 0.8;
 }
 
 .social-button:hover {
-    background-color: var(--border-color);
+    opacity: 1;
 }
 
 .social-button:focus {
@@ -360,6 +385,19 @@ body {
 
     .container {
         padding: var(--spacing-md);
+    }
+}
+
+/* Adjust container padding for screens where header stacks */
+@media (max-width: 320px) {
+    .container {
+        padding-top: calc(5.5rem + var(--spacing-md)) !important;
+    }
+}
+
+/* Adjust container padding for screens between 320px and 768px */
+@media (min-width: 321px) and (max-width: 768px) {
+    .container {
         padding-top: calc(2.5rem + var(--spacing-sm) + var(--spacing-md));
     }
 
